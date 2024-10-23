@@ -82,7 +82,7 @@ def register_user():
     password = request.json.get("password", None)
     email = request.json.get("email", None)
 
-    role = request.json.get("role", "user") #user is default role
+    role = request.json.get("role", "user") # User is default role
     if username == None:
         return jsonify({"message" : "Username is required!"}), 404
     elif User.query.filter_by(username=username).first():
